@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddle Question</title>
+</head>
+<body>
+    <h1>Riddle Question</h1>
+    <form onsubmit="checkAnswer(); return false;">
+        <label for="answer">What am I? I'm a language for everything yet I have no real identity of my own. Good luck trying to compile me. What am I?</label><br>
+        <input type="text" id="answer" name="answer"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.toLowerCase();
+            var correctAnswer = "code";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").innerText = "Hooray! That's correct!";
+            } else {
+                document.getElementById("result").innerText = "Incorrect. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
