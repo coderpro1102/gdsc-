@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Word Puzzle</title>
+    <style>
+        .hidden-word {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hidden Word Puzzle</h1>
+    <p>Find the hidden word on this page!</p>
+    <img src="https://gdsc.community.dev/images/gdsc-lockup.svg" alt="GDSC Logo" style="max-width: 200px;"><br><br>
+    
+    <!-- Hidden word -->
+    <div class="hidden-word">GDSC</div>
+
+    <script>
+        // Code to reveal the hidden word
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.hidden-word').style.display = 'block';
+            }, 5000); // Adjust the delay (in milliseconds) as needed
+        });
+    </script>
+</body>
+</html>
