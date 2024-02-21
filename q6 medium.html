@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Riddle</title>
+</head>
+<body>
+    <h1>Python Riddle</h1>
+    <p>Guess the output of the following Python code:</p>
+    <pre>
+        <code>
+            colors = ["red", "green", "blue", "yellow"]
+            output = ""
+            for color in colors:
+                output += color[0]
+            print(output)
+        </code>
+    </pre>
+    
+    <form onsubmit="checkAnswer(); return false;">
+        <label for="answer">Enter the output word:</label><br>
+        <input type="text" id="answer" name="answer" placeholder="Output"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result" style="display: none;"></p>
+
+    <script>
+        // Function to check the user's answer
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+            var correctAnswer = "rgb";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").innerText = "Hooray! That's correct! 🎉";
+            } else {
+                document.getElementById("result").innerText = "Oops! That's not the correct output. Try again.";
+            }
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
