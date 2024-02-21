@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDSC Tech Riddle</title>
+</head>
+<body>
+    <h1>GDSC Tech Riddle</h1>
+    <p>I'm a place where ideas flow, where projects grow, and where connections sow. In a world of bytes and code, I stand tall, a beacon for all. What am I?</p>
+    
+    <form onsubmit="checkAnswer(); return false;">
+        <label for="answer">Your Answer:</label><br>
+        <input type="text" id="answer" name="answer"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.toLowerCase();
+            var correctAnswer = "gdsc hub";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").innerText = "Hooray! That's correct! 🎉";
+            } else {
+                document.getElementById("result").innerText = "Oops! That's not the correct answer. Try again.";
+            }
+        }
+    </script>
+</body>
+</html>
