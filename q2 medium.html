@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocaching Coordinates</title>
+    <!-- Embedding coordinates in metadata -->
+    <meta name="geocaching-coordinates" content="Latitude: 40.7128° N, Longitude: 74.0060° W">
+</head>
+<body>
+    <h1>Geocaching Coordinates</h1>
+    <p>Participants discover a set of coordinates embedded within the webpage source code or metadata.</p>
+    
+    <form onsubmit="checkCoordinates(); return false;">
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" placeholder="Enter Latitude"><br><br>
+        
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" placeholder="Enter Longitude"><br><br>
+        
+        <input type="submit" value="Check Coordinates">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function checkCoordinates() {
+            var userLatitude = document.getElementById("latitude").value.trim();
+            var userLongitude = document.getElementById("longitude").value.trim();
+            var embeddedCoordinates = document.querySelector('meta[name="geocaching-coordinates"]').getAttribute("content");
+            var correctLatitude = embeddedCoordinates.includes(userLatitude);
+            var correctLongitude = embeddedCoordinates.includes(userLongitude);
+
+            if (correctLatitude && correctLongitude) {
+                document.getElementById("result").innerText = "Hooray! Coordinates are correct!";
+            } else {
+                document.getElementById("result").innerText = "Incorrect coordinates. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
