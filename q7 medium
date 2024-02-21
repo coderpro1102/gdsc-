@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Guessing Game</title>
+</head>
+<body>
+    <h1>Logo Guessing Game</h1>
+    <p>Can you guess the logo based on the description?</p>
+    <p><strong>Description:</strong> This logo features a black cat with an arched back, facing to the right, and its silhouette is set against a green background.</p>
+    
+    <form onsubmit="checkAnswer(); return false;">
+        <label for="answer">Your Guess:</label><br>
+        <input type="text" id="answer" name="answer" placeholder="Enter your guess"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result" style="display: none;"></p>
+
+    <script>
+        // Function to check the user's answer
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+            var correctAnswer = "github";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").innerText = "Hooray! That's correct! 🎉";
+            } else {
+                document.getElementById("result").innerText = "Oops! That's not the correct logo. Try again.";
+            }
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
