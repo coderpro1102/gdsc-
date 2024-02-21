@@ -20,6 +20,14 @@
     <!-- Hidden word -->
     <div class="hidden-word">GDSC</div>
 
+    <form onsubmit="checkAnswer(); return false;">
+        <label for="answer">Enter the hidden word:</label><br>
+        <input type="text" id="answer" name="answer" placeholder="Hidden Word"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result"></p>
+
     <script>
         // Code to reveal the hidden word
         document.addEventListener('DOMContentLoaded', function() {
@@ -27,6 +35,18 @@
                 document.querySelector('.hidden-word').style.display = 'block';
             }, 5000); // Adjust the delay (in milliseconds) as needed
         });
+
+        // Function to check the user's answer
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+            var correctAnswer = "gdsc";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").innerText = "Hooray! That's correct! 🎉";
+            } else {
+                document.getElementById("result").innerText = "Oops! That's not the correct answer. Try again.";
+            }
+        }
     </script>
 </body>
 </html>
